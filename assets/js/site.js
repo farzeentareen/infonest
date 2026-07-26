@@ -472,6 +472,13 @@
     setReadingTime();
     setupUniqueImagesAndClickableCards();
     setupSidebarIcons();
+
+    // Dynamically inject Google AdSense script
+    const adScript = document.createElement('script');
+    adScript.async = true;
+    adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2344063334800709";
+    adScript.setAttribute('crossorigin', 'anonymous');
+    document.head.appendChild(adScript);
   }
 
   if (document.readyState === 'loading') {
