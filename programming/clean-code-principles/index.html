@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clean Code Principles Every Developer Should Know | InfoNest</title>
+  <meta name="description" content="Writing code that works is the minimum. This guide covers the clean code principles that make code readable, maintainable, and enjoyable to work with." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://infonest.page/programming/clean-code-principles/" />
+  <meta property="og:title" content="Clean Code Principles Every Developer Should Know" />
+  <meta property="og:url" content="https://infonest.page/programming/clean-code-principles/" />
+  <meta property="og:type" content="article" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Clean Code Principles Every Developer Should Know","datePublished":"2026-07-14","dateModified":"2026-07-14","author":{"@type":"Person","name":"Alex Morgan","url":"https://infonest.page/author/alex-morgan/"},"publisher":{"@type":"Organization","name":"InfoNest","url":"https://infonest.page"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://infonest.page/programming/clean-code-principles/"}}
+  </script>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/article.css" />
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<main id="main-content">
+  <div class="container" style="padding-top:var(--space-8);">
+    <div class="ad-slot ad-slot-header" aria-label="Advertisement">Advertisement</div>
+    <div class="article-layout">
+      <article>
+        <nav aria-label="Breadcrumb" class="breadcrumb" style="margin-bottom:var(--space-5);">
+          <a href="/">Home</a><span class="breadcrumb-sep">/</span><a href="/programming/">Programming</a><span class="breadcrumb-sep">/</span>
+          <span aria-current="page">Clean Code Principles</span>
+        </nav>
+        <div class="article-header">
+          <a href="/programming/" class="article-category-badge badge-programming">⌨️ Programming</a>
+          <h1 class="article-title">Clean Code Principles Every Developer Should Know</h1>
+          <div class="article-meta-bar">
+            <div class="article-meta-item"><a href="/author/alex-morgan/">Alex Morgan</a></div>
+            <div class="article-meta-item">July 14, 2026</div>
+            <div class="article-meta-item"><span class="reading-time-display">8 min read</span></div>
+          </div>
+        </div>
+        <div class="article-hero-placeholder cat-programming" aria-label="Clean code illustration">✨</div>
+        <div class="article-body">
+          <p class="lead">Code is read far more often than it is written. The developer who reads your code might be a colleague, a future hire, an open source contributor — or yourself, six months from now, with no memory of why you made certain decisions. Writing clean code isn't a nicety. It's a professional responsibility.</p>
+
+          <h2>What "Clean Code" Actually Means</h2>
+          <p>Clean code is code that is easy for another competent developer to read and understand without extensive explanation. It's not necessarily the shortest code, or the cleverest code, or the most performant code. Bjarne Stroustrup, creator of C++, described clean code as code that "reads like well-written prose." Robert Martin (Uncle Bob), who wrote the seminal book on the subject, described it as code where "each routine you read turns out to be pretty much what you expected."</p>
+          <p>The practical test: can a developer unfamiliar with this codebase understand what a function does just by reading it, without having to trace through five other functions or read a comment that explains what the variable names should have made obvious?</p>
+
+          <h2>Meaningful Names</h2>
+          <p>Naming is one of the hardest problems in software development, which sounds absurd until you've spent twenty minutes trying to figure out what <code>d</code>, <code>temp</code>, or <code>processData()</code> actually refers to. Good names reveal intent. A function called <code>getDaysSinceLastLogin(user)</code> tells you exactly what it does, what it takes as input, and roughly what it returns. A function called <code>get(u)</code> tells you nothing.</p>
+          <p>Some naming principles worth internalizing: use names that reveal intent, avoid abbreviations unless they're universally understood, use consistent terminology throughout the codebase, and make class names nouns and function names verbs. When you find yourself writing a comment to explain what a name means, consider whether a better name would make the comment unnecessary.</p>
+
+          <h2>Functions Should Do One Thing</h2>
+          <p>The Single Responsibility Principle, applied at the function level: a function should do one thing, and do it well. Functions that do multiple things are harder to name, harder to test, harder to debug, and harder to reuse. When you find yourself reaching for "and" in a function name — <code>validateAndSaveUser()</code>, <code>fetchAndProcessOrders()</code> — that's a signal that the function is doing too much and should be split.</p>
+          <p>What's the right size for a function? Opinions vary, but a useful heuristic: if you can't see the entire function on a single screen without scrolling, it's probably too long. Functions of 5–20 lines tend to be most readable. Functions of 100+ lines are almost always candidates for refactoring.</p>
+
+          <div class="ad-slot ad-slot-inarticle" aria-label="Advertisement">Advertisement</div>
+
+          <h2>Comments: Use Them Sparingly and Well</h2>
+          <p>The most common misconception about clean code is that well-commented code is clean code. It isn't. A comment that explains what the code is doing is an admission that the code itself isn't clear enough. Good code should be self-documenting to the extent possible — your function and variable names should carry the meaning.</p>
+          <p>Comments have a legitimate role in specific circumstances: explaining <em>why</em> a decision was made (especially when the code looks wrong at first glance but is actually correct for a non-obvious reason), documenting public APIs, and noting known limitations or future work. What they should not do is serve as subtitles for unreadable code.</p>
+
+          <h2>DRY: Don't Repeat Yourself</h2>
+          <p>Duplication is the enemy of maintainability. When the same logic appears in multiple places, every change to that logic requires finding and modifying every instance — and missing one creates a bug. The DRY principle says that every piece of knowledge should have a single, unambiguous representation in the codebase.</p>
+          <p>DRY doesn't mean "never write the same line twice." It means avoiding the duplication of intent. Two functions that happen to have similar implementations may have different purposes and should remain separate. Two functions that solve the same problem in different places should be refactored into one.</p>
+
+          <h2>Handle Errors Thoughtfully</h2>
+          <p>Error handling is where the difference between clean and sloppy code is most visible to users. Good error handling doesn't just catch exceptions — it communicates clearly what went wrong, doesn't swallow errors silently, and doesn't expose internal implementation details (like database error messages) to end users.</p>
+          <p>Use specific exception types rather than catching all exceptions blindly. Return meaningful error messages. Log errors with enough context to debug them later. And don't use exceptions for normal control flow — that's what conditionals are for.</p>
+
+          <h2>Keep It Simple</h2>
+          <p>KISS — Keep It Simple, Stupid — is perhaps the most important clean code principle and the hardest to follow for skilled developers. The ability to write complex, clever code is a developmental stage, not an endpoint. The ability to write simple code that solves complex problems is the sign of genuine expertise.</p>
+          <p>The simplest solution that correctly solves the problem is almost always the best choice. Unnecessary abstractions, premature optimization, and over-engineering create complexity that everyone on the team has to pay for — in comprehension time, debugging time, and maintenance burden. The next person to read your code will thank you for choosing simple.</p>
+
+          <div class="key-takeaways">
+            <h4>Clean Code: The Core Principles</h4>
+            <ul>
+              <li>Names should reveal intent — no cryptic abbreviations or vague generic terms</li>
+              <li>Functions should do one thing and be short enough to fit on a screen</li>
+              <li>Comments should explain <em>why</em>, not what — good code explains itself</li>
+              <li>DRY: don't repeat logic in multiple places</li>
+              <li>Handle errors explicitly and meaningfully</li>
+              <li>Prefer the simplest solution that works</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="article-footer">
+          <div class="article-tags">
+            <a href="/programming/" class="article-tag">Programming</a>
+            <a href="/programming/" class="article-tag">Clean Code</a>
+            <a href="/programming/" class="article-tag">Best Practices</a>
+          </div>
+          <div class="author-bio-card">
+            <div class="author-avatar-placeholder">AM</div>
+            <div class="author-bio-info">
+              <h4>Alex Morgan</h4>
+              <div class="author-role">Lead Editor &amp; Writer, InfoNest</div>
+              <a href="/author/alex-morgan/" style="font-size:0.82rem;color:var(--accent-primary);font-weight:600;">View all articles →</a>
+            </div>
+          </div>
+        </div>
+        <div class="related-section">
+          <h3>Related Articles</h3>
+          <div class="related-grid">
+            <article class="card"><div class="card-img-placeholder cat-programming" style="aspect-ratio:16/7;font-size:1.5rem;">⌨️</div><div class="card-body"><span class="card-category badge-programming">Programming</span><h4 class="card-title" style="font-size:1rem;"><a href="/programming/best-programming-languages-2026/">Best Languages 2026</a></h4></div></article>
+            <article class="card"><div class="card-img-placeholder cat-programming" style="aspect-ratio:16/7;font-size:1.5rem;">🗺️</div><div class="card-body"><span class="card-category badge-programming">Programming</span><h4 class="card-title" style="font-size:1rem;"><a href="/programming/beginners-roadmap-software-developer/">Developer Roadmap</a></h4></div></article>
+            <article class="card"><div class="card-img-placeholder cat-ai" style="aspect-ratio:16/7;font-size:1.5rem;">🛠️</div><div class="card-body"><span class="card-category badge-ai">AI</span><h4 class="card-title" style="font-size:1rem;"><a href="/ai/ai-tools-changing-productivity/">AI Tools for Productivity</a></h4></div></article>
+          </div>
+        </div>
+      </article>
+      <aside class="article-sidebar">
+        <div class="ad-slot ad-slot-sidebar" aria-label="Advertisement">Advertisement</div>
+        <div class="sidebar-widget">
+          <div class="sidebar-widget-title">Browse Categories</div>
+          <nav class="sidebar-categories">
+            <a href="/programming/" class="sidebar-cat-link">⌨️ Programming <span class="sidebar-cat-count">3</span></a>
+            <a href="/ai/" class="sidebar-cat-link">🤖 AI <span class="sidebar-cat-count">3</span></a>
+            <a href="/technology/" class="sidebar-cat-link">💻 Technology <span class="sidebar-cat-count">3</span></a>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
