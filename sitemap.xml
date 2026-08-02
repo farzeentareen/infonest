@@ -29,6 +29,9 @@
   <url><loc>https://infonest.page/technology/how-cloud-computing-works/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/technology/top-emerging-tech-trends/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/technology/cybersecurity-basics/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/technology/cloud-security-explained/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/technology/cloud-storage-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/technology/aws-vs-azure-vs-google-cloud/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- AI Articles -->
   <url><loc>https://infonest.page/ai/what-is-artificial-intelligence/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -44,11 +47,13 @@
   <url><loc>https://infonest.page/finance/personal-budgeting-101/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/finance/understanding-compound-interest/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/finance/beginners-guide-to-investing/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/finance/how-to-save-money-on-a-low-income/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Health & Wellness Articles -->
   <url><loc>https://infonest.page/health-wellness/daily-habits-improve-long-term-health/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/health-wellness/understanding-sleep-cycles/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/health-wellness/nutrition-basics-balanced-diet/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/health-wellness/how-to-manage-stress/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Education Articles -->
   <url><loc>https://infonest.page/education/effective-study-techniques/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -59,6 +64,7 @@
   <url><loc>https://infonest.page/career/how-to-write-resume/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/career/negotiating-your-salary/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/career/switching-careers-step-by-step/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/career/how-to-ace-a-job-interview/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Business Articles -->
   <url><loc>https://infonest.page/business/how-to-start-small-business/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
