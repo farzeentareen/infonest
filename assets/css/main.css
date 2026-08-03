@@ -735,7 +735,7 @@ p  { margin-bottom: var(--space-4); }
 /* NOTE: During the Google AdSense review phase, we hide empty ad slots so the site looks fully complete and clean without dashed placeholder boxes. 
    Once your account is approved, remove "display: none !important;" to display the ad units. */
 .ad-slot {
-  display: none !important;
+  display: none;
   width: 100%;
   background: var(--bg-surface-2);
   border: 2px dashed var(--border-color);
@@ -747,6 +747,11 @@ p  { margin-bottom: var(--space-4); }
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 500;
+}
+/* Show ad slots only when Google AdSense has inserted active elements/iframes inside them */
+.ad-slot:has(iframe),
+.ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) {
+  display: flex;
 }
 .ad-slot-header  { min-height: 90px;  margin-bottom: var(--space-6); }
 .ad-slot-footer  { min-height: 90px;  margin-top: var(--space-6); }
