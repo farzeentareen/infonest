@@ -460,6 +460,46 @@
     });
   }
 
+  /* ── Contact Form Simulation ── */
+  function setupContactForm() {
+    const form = $('#contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      const action = form.getAttribute('action');
+      if (action && action.includes('YOUR_FORM_ID')) {
+        e.preventDefault();
+
+        const submitBtn = $('#contact-submit', form);
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+        }
+
+        setTimeout(() => {
+          form.style.transition = 'opacity 0.3s ease';
+          form.style.opacity = '0';
+
+          setTimeout(() => {
+            form.innerHTML = `
+              <div class="contact-success" style="text-align: center; padding: var(--space-8) var(--space-6); background: var(--bg-surface-2); border: 1px solid var(--border-color); border-radius: var(--radius-lg); animation: fadeInUp 0.5s ease both;">
+                <div style="font-size: 3rem; margin-bottom: var(--space-4); color: var(--accent-primary);">✓</div>
+                <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2); font-family: var(--font-display);">Message Sent Successfully!</h3>
+                <p style="color: var(--text-secondary); margin-bottom: var(--space-6); font-size: 0.95rem;">
+                  Thank you for reaching out. We have simulated your form submission.
+                </p>
+                <div style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-surface); padding: var(--space-3); border-radius: var(--radius-md); border: 1px dashed var(--border-color); max-width: 320px; margin: 0 auto;">
+                  <strong>Note:</strong> Update the <code>YOUR_FORM_ID</code> placeholder in the contact form HTML to connect your live Formspree endpoint.
+                </div>
+              </div>
+            `;
+            form.style.opacity = '1';
+          }, 300);
+        }, 800);
+      }
+    });
+  }
+
   /* ── Initialize ── */
   function init() {
     injectShared();
@@ -472,6 +512,7 @@
     setReadingTime();
     setupUniqueImagesAndClickableCards();
     setupSidebarIcons();
+    setupContactForm();
 
     // Dynamically inject Google AdSense script
     const adScript = document.createElement('script');

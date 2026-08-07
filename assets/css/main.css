@@ -1232,3 +1232,54 @@ tr:hover { background: var(--bg-surface-2); }
 .cat-travel       { background-image: url('/assets/images/travel_hero.png') !important; }
 .cat-lifestyle    { background-image: url('/assets/images/lifestyle_hero.png') !important; }
 
+/* ── Ad Slot Placeholders ── */
+.ad-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface-2);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all var(--transition-base);
+  margin: var(--space-6) auto;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: transparent !important; /* Hide raw unstyled text */
+}
+
+.ad-slot::before {
+  content: 'Sponsored Advertisement';
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+.ad-slot-header {
+  min-height: 90px;
+  max-width: 728px;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.ad-slot-inarticle {
+  min-height: 120px;
+  max-width: 100%;
+  margin: var(--space-8) auto;
+}
+
+.ad-slot-sidebar {
+  min-height: 250px;
+  max-width: 300px;
+}
+
+.ad-slot-footer {
+  min-height: 90px;
+  max-width: 728px;
+  margin: var(--space-8) auto 0;
+}
+
+
