@@ -735,7 +735,7 @@ p  { margin-bottom: var(--space-4); }
 /* NOTE: During the Google AdSense review phase, we hide empty ad slots so the site looks fully complete and clean without dashed placeholder boxes. 
    Once your account is approved, remove "display: none !important;" to display the ad units. */
 .ad-slot {
-  display: none;
+  display: none !important;
   width: 100%;
   background: var(--bg-surface-2);
   border: 2px dashed var(--border-color);
@@ -1210,53 +1210,59 @@ tr:hover { background: var(--bg-surface-2); }
   body { padding-top: 0; }
 }
 
-/* ── Real AI Image Backgrounds ── */
 .card-img-placeholder,
-.featured-card-img-placeholder {
-  font-size: 0 !important;
-  color: transparent !important;
+.featured-card-img-placeholder,
+.article-hero-placeholder {
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
 
-.cat-technology   { background-image: url('/assets/images/tech_hero.png') !important; }
-.cat-ai           { background-image: url('/assets/images/ai_hero.png') !important; }
-.cat-programming  { background-image: url('/assets/images/prog_hero.png') !important; }
-.cat-finance      { background-image: url('/assets/images/finance_hero.png') !important; }
-.cat-health       { background-image: url('/assets/images/health_hero.png') !important; }
-.cat-education    { background-image: url('/assets/images/edu_hero.png') !important; }
-.cat-career       { background-image: url('/assets/images/career_hero.png') !important; }
-.cat-business     { background-image: url('/assets/images/business_hero.png') !important; }
-.cat-productivity { background-image: url('/assets/images/prod_hero.png') !important; }
-.cat-travel       { background-image: url('/assets/images/travel_hero.png') !important; }
-.cat-lifestyle    { background-image: url('/assets/images/lifestyle_hero.png') !important; }
+.cat-technology   { background-image: url('/assets/images/heroes/tech.svg') !important; }
+.cat-ai           { background-image: url('/assets/images/heroes/ai.svg') !important; }
+.cat-programming  { background-image: url('/assets/images/heroes/prog.svg') !important; }
+.cat-finance      { background-image: url('/assets/images/heroes/finance.svg') !important; }
+.cat-health,
+.cat-health-wellness { background-image: url('/assets/images/heroes/health.svg') !important; }
+.cat-education    { background-image: url('/assets/images/heroes/edu.svg') !important; }
+.cat-career       { background-image: url('/assets/images/heroes/career.svg') !important; }
+.cat-business     { background-image: url('/assets/images/heroes/business.svg') !important; }
+.cat-productivity { background-image: url('/assets/images/heroes/prod.svg') !important; }
+.cat-travel       { background-image: url('/assets/images/heroes/travel.svg') !important; }
+.cat-lifestyle    { background-image: url('/assets/images/heroes/lifestyle.svg') !important; }
 
-/* ── Ad Slot Placeholders ── */
+/* Hidden until AdSense approval — keep verification script in <head> only */
 .ad-slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-surface-2);
-  border: 1px dashed var(--border-color);
-  border-radius: var(--radius-md);
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  transition: all var(--transition-base);
-  margin: var(--space-6) auto;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  color: transparent !important; /* Hide raw unstyled text */
+  display: none !important;
 }
 
-.ad-slot::before {
-  content: 'Sponsored Advertisement';
-  color: var(--text-muted);
-  font-family: var(--font-body);
+.cookie-banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 80;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0,0,0,.18);
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  flex: 1;
+  min-width: 220px;
+}
+.cookie-banner a { color: var(--accent-primary); }
 
 .ad-slot-header {
   min-height: 90px;

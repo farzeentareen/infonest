@@ -10,7 +10,7 @@
   <url><loc>https://infonest.page/disclaimer/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://infonest.page/editorial-policy/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://infonest.page/sitemap-page/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://infonest.page/author/alex-morgan/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://infonest.page/about/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Category Pages -->
   <url><loc>https://infonest.page/technology/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
@@ -87,4 +87,26 @@
   <url><loc>https://infonest.page/lifestyle/sustainable-living-small-changes/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://infonest.page/lifestyle/digital-detox-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
+  <url><loc>https://infonest.page/technology/how-to-choose-a-password-manager/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/technology/backup-phone-and-laptop-checklist/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/ai/how-to-write-better-prompts/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/ai/when-not-to-use-ai-at-work/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/programming/how-to-debug-code-systematically/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/programming/git-basics-you-need-at-work/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/finance/how-to-read-a-bank-statement/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/finance/emergency-fund-how-much-and-where/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/health-wellness/track-sleep-without-a-wearable/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/health-wellness/walking-as-a-starter-habit/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/education/notes-you-will-actually-reuse/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/education/spaced-repetition-without-an-app/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/career/30-60-90-day-plan-template/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/career/how-to-ask-for-feedback-at-work/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/business/how-to-price-a-service/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/business/simple-bookkeeping-for-a-side-project/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/productivity/weekly-review-that-fits-in-30-minutes/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/productivity/deep-work-on-a-noisy-schedule/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/travel/estimate-a-trip-budget-in-a-spreadsheet/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/travel/airport-layover-survival-guide/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/lifestyle/declutter-one-room-in-a-weekend/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://infonest.page/lifestyle/weeknight-cooking-when-you-are-tired/</loc><lastmod>2026-08-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -89,15 +89,12 @@
     return `
 <footer class="site-footer">
   <div class="container">
-    <!-- AD SLOT: Footer -->
-    <div class="ad-slot ad-slot-footer" aria-label="Advertisement">Advertisement</div>
-
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="nav-logo" style="margin-bottom:16px; display:inline-flex;">
           <span class="nav-logo-text">Info<span>Nest</span></span>
         </a>
-        <p class="footer-tagline">Your go-to hub for trusted, well-researched content across technology, finance, health, career, and more. Knowledge, curated.</p>
+        <p class="footer-tagline">Practical, original explainers for work and life. Published by the InfoNest editorial team. Contact: hello@infonest.page</p>
       </div>
 
       <div>
@@ -128,7 +125,6 @@
         <nav class="footer-links" aria-label="Company links">
           <a href="/about/"             class="footer-link">About Us</a>
           <a href="/contact/"           class="footer-link">Contact</a>
-          <a href="/author/alex-morgan/" class="footer-link">Our Team</a>
           <a href="/editorial-policy/"  class="footer-link">Editorial Policy</a>
           <a href="/sitemap-page/"      class="footer-link">Sitemap</a>
         </nav>
@@ -295,64 +291,17 @@
     display.forEach(el => { el.textContent = label; });
   }
 
-  /* ── Unique Category Article Images & Clickable Cards ── */
-  const uniqueImages = {
-    "/technology/how-cloud-computing-works/": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
-    "/technology/top-emerging-tech-trends/": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
-    "/technology/cybersecurity-basics/": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
-    "/ai/what-is-artificial-intelligence/": "/assets/images/ai_hero.png",
-    "/ai/ai-tools-changing-productivity/": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-    "/ai/ml-deep-learning-ai-differences/": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
-    "/programming/best-programming-languages-2026/": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-    "/programming/beginners-roadmap-software-developer/": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
-    "/programming/clean-code-principles/": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=800&q=80",
-    "/finance/personal-budgeting-101/": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
-    "/finance/understanding-compound-interest/": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
-    "/finance/beginners-guide-to-investing/": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
-    "/health-wellness/daily-habits-improve-long-term-health/": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80",
-    "/health-wellness/understanding-sleep-cycles/": "https://images.unsplash.com/photo-1511295742364-92767fc06295?auto=format&fit=crop&w=800&q=80",
-    "/health-wellness/nutrition-basics-balanced-diet/": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
-    "/education/effective-study-techniques/": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80",
-    "/education/how-to-choose-degree-program/": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
-    "/education/free-online-learning-resources/": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=800&q=80",
-    "/career/how-to-write-resume/": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
-    "/career/negotiating-your-salary/": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
-    "/career/switching-careers-step-by-step/": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-    "/business/how-to-start-small-business/": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
-    "/business/understanding-business-models/": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-    "/business/marketing-on-a-budget/": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    "/productivity/time-management-techniques/": "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=800&q=80",
-    "/productivity/how-to-build-habits-that-stick/": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80",
-    "/productivity/pomodoro-technique-explained/": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80",
-    "/travel/budget-travel-tips-for-beginners/": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80",
-    "/travel/how-to-plan-a-trip/": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80",
-    "/travel/essential-packing-checklist/": "https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?auto=format&fit=crop&w=800&q=80",
-    "/lifestyle/building-a-morning-routine/": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
-    "/lifestyle/minimalism-101/": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-    "/lifestyle/sustainable-living-small-changes/": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
-    "/lifestyle/digital-detox-guide/": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80"
-  };
-
+  /* ── Clickable cards (heroes are original CSS/SVG) ── */
   function setupUniqueImagesAndClickableCards() {
-    // 1. Process standard cards
+    $$('.article-hero-placeholder, .card-img-placeholder, .featured-card-img-placeholder').forEach((el) => {
+      el.style.fontSize = '0';
+      el.style.color = 'transparent';
+    });
+
     const cards = $$('.card');
     cards.forEach(card => {
       const link = $('a', card);
       if (link) {
-        const href = link.getAttribute('href');
-        if (uniqueImages[href]) {
-          const placeholder = $('.card-img-placeholder', card) || $('.featured-card-img-placeholder', card);
-          if (placeholder) {
-            placeholder.style.setProperty('background-image', `url('${uniqueImages[href]}')`, 'important');
-            placeholder.style.fontSize = '0';
-            placeholder.style.color = 'transparent';
-            placeholder.style.backgroundSize = 'cover';
-            placeholder.style.backgroundPosition = 'center';
-            placeholder.style.backgroundRepeat = 'no-repeat';
-          }
-        }
-        
-        // Click action for entire card
         card.style.cursor = 'pointer';
         card.addEventListener('click', (e) => {
           if (e.target.tagName === 'A' || e.target.closest('a')) return;
@@ -361,24 +310,9 @@
       }
     });
 
-    // 2. Process featured card on homepage
     const featuredCards = $$('.featured-card');
     featuredCards.forEach(fCard => {
       const link = $('a', fCard) || fCard;
-      const href = fCard.getAttribute('href') || (link !== fCard ? link.getAttribute('href') : null);
-      
-      if (href && uniqueImages[href]) {
-        const placeholder = $('.featured-card-img-placeholder', fCard);
-        if (placeholder) {
-          placeholder.style.setProperty('background-image', `url('${uniqueImages[href]}')`, 'important');
-          placeholder.style.fontSize = '0';
-          placeholder.style.color = 'transparent';
-          placeholder.style.backgroundSize = 'cover';
-          placeholder.style.backgroundPosition = 'center';
-          placeholder.style.backgroundRepeat = 'no-repeat';
-        }
-      }
-
       if (link && link !== fCard) {
         fCard.style.cursor = 'pointer';
         fCard.addEventListener('click', (e) => {
@@ -387,20 +321,6 @@
         });
       }
     });
-
-    // 3. Process current article page main hero image
-    const path = window.location.pathname;
-    if (uniqueImages[path]) {
-      const heroPlaceholder = $('.article-hero-placeholder');
-      if (heroPlaceholder) {
-        heroPlaceholder.style.setProperty('background-image', `url('${uniqueImages[path]}')`, 'important');
-        heroPlaceholder.style.fontSize = '0';
-        heroPlaceholder.style.color = 'transparent';
-        heroPlaceholder.style.backgroundSize = 'cover';
-        heroPlaceholder.style.backgroundPosition = 'center';
-        heroPlaceholder.style.backgroundRepeat = 'no-repeat';
-      }
-    }
   }
 
   /* ── Sidebar Category Icons SVG Mapping ── */
@@ -436,7 +356,12 @@
       else if (href.includes('/lifestyle/')) catKey = "lifestyle";
 
       if (catKey && sidebarCategoryIcons[catKey]) {
+        const counts = {
+          technology: 8, ai: 5, programming: 5, finance: 6, health: 6,
+          education: 5, career: 6, business: 5, productivity: 5, travel: 5, lifestyle: 6
+        };
         const countSpan = $('.sidebar-cat-count', link);
+        if (countSpan && counts[catKey]) countSpan.textContent = String(counts[catKey]);
         const countHTML = countSpan ? countSpan.outerHTML : '';
         
         let cleanText = link.textContent;
@@ -460,43 +385,33 @@
     });
   }
 
-  /* ── Contact Form Simulation ── */
   function setupContactForm() {
     const form = $('#contact-form');
     if (!form) return;
 
     form.addEventListener('submit', function (e) {
-      const action = form.getAttribute('action');
-      if (action && action.includes('YOUR_FORM_ID')) {
-        e.preventDefault();
+      e.preventDefault();
+      const name = ($('#contact-name', form) || {}).value || '';
+      const email = ($('#contact-email', form) || {}).value || '';
+      const subject = ($('#contact-subject', form) || {}).value || 'InfoNest contact';
+      const message = ($('#contact-message', form) || {}).value || '';
+      const body = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
+      const mailto = `mailto:hello@infonest.page?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = mailto;
+    });
+  }
 
-        const submitBtn = $('#contact-submit', form);
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Sending...';
-        }
-
-        setTimeout(() => {
-          form.style.transition = 'opacity 0.3s ease';
-          form.style.opacity = '0';
-
-          setTimeout(() => {
-            form.innerHTML = `
-              <div class="contact-success" style="text-align: center; padding: var(--space-8) var(--space-6); background: var(--bg-surface-2); border: 1px solid var(--border-color); border-radius: var(--radius-lg); animation: fadeInUp 0.5s ease both;">
-                <div style="font-size: 3rem; margin-bottom: var(--space-4); color: var(--accent-primary);">✓</div>
-                <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2); font-family: var(--font-display);">Message Sent Successfully!</h3>
-                <p style="color: var(--text-secondary); margin-bottom: var(--space-6); font-size: 0.95rem;">
-                  Thank you for reaching out. We have simulated your form submission.
-                </p>
-                <div style="font-size: 0.8rem; color: var(--text-muted); background: var(--bg-surface); padding: var(--space-3); border-radius: var(--radius-md); border: 1px dashed var(--border-color); max-width: 320px; margin: 0 auto;">
-                  <strong>Note:</strong> Update the <code>YOUR_FORM_ID</code> placeholder in the contact form HTML to connect your live Formspree endpoint.
-                </div>
-              </div>
-            `;
-            form.style.opacity = '1';
-          }, 300);
-        }, 800);
-      }
+  function setupCookieBanner() {
+    if (localStorage.getItem('infonest-cookies') === 'ok') return;
+    const bar = document.createElement('div');
+    bar.className = 'cookie-banner';
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Cookie notice');
+    bar.innerHTML = `<p>We use essential cookies for theme preference. After ads are approved, Google AdSense may set advertising cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p><button type="button" class="btn btn-primary btn-sm" id="cookieAccept">OK</button>`;
+    document.body.appendChild(bar);
+    $('#cookieAccept', bar).addEventListener('click', function () {
+      localStorage.setItem('infonest-cookies', 'ok');
+      bar.remove();
     });
   }
 
@@ -513,13 +428,7 @@
     setupUniqueImagesAndClickableCards();
     setupSidebarIcons();
     setupContactForm();
-
-    // Dynamically inject Google AdSense script
-    const adScript = document.createElement('script');
-    adScript.async = true;
-    adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2344063334800709";
-    adScript.setAttribute('crossorigin', 'anonymous');
-    document.head.appendChild(adScript);
+    setupCookieBanner();
   }
 
   if (document.readyState === 'loading') {
