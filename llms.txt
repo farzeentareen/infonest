@@ -1,0 +1,33 @@
+# InfoNest
+
+> Practical how-to articles on work, money, health, and technology.
+
+InfoNest is an independent editorial site at https://infonest.page. Articles are published by InfoNest Editorial. Contact: hello@infonest.page
+
+## Site
+
+- [Home](https://infonest.page/)
+- [About](https://infonest.page/about/)
+- [Contact](https://infonest.page/contact/)
+- [Sitemap](https://infonest.page/sitemap-page/)
+- [Editorial policy](https://infonest.page/editorial-policy/)
+
+## Topics
+
+- [Technology](https://infonest.page/technology/)
+- [Artificial Intelligence](https://infonest.page/ai/)
+- [Programming](https://infonest.page/programming/)
+- [Finance](https://infonest.page/finance/)
+- [Health](https://infonest.page/health-wellness/)
+- [Education](https://infonest.page/education/)
+- [Career](https://infonest.page/career/)
+- [Business](https://infonest.page/business/)
+- [Productivity](https://infonest.page/productivity/)
+- [Travel](https://infonest.page/travel/)
+- [Lifestyle](https://infonest.page/lifestyle/)
+
+## Optional reading
+
+- [How to choose a password manager](https://infonest.page/technology/how-to-choose-a-password-manager/)
+- [How to read a bank statement](https://infonest.page/finance/how-to-read-a-bank-statement/)
+- [30-minute weekly review](https://infonest.page/productivity/weekly-review-that-fits-in-30-minutes/)

@@ -61,7 +61,7 @@
       <span class="nav-logo-text">Info<span>Nest</span></span>
     </a>
 
-    <div class="nav-menu" role="list">
+    <div class="nav-menu">
       ${navLinksHTML}
       <a href="/about/" class="nav-link${isActive('/about/') ? ' active' : ''}">About</a>
       <a href="/contact/" class="nav-link${isActive('/contact/') ? ' active' : ''}">Contact</a>
@@ -71,14 +71,14 @@
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
         <span class="theme-icon">🌙</span>
       </button>
-      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navDrawer">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<div class="nav-drawer" id="navDrawer" role="dialog" aria-label="Mobile navigation">
+<div class="nav-drawer" id="navDrawer" hidden role="dialog" aria-label="Mobile navigation" aria-hidden="true">
   ${drawerLinksHTML}
   <a href="/about/"            class="nav-drawer-link">About Us</a>
   <a href="/contact/"          class="nav-drawer-link">Contact</a>
@@ -134,6 +134,7 @@
       </div>
     </div>
 
+    <p class="cookie-note">Theme preference is stored on this device. After ads are approved, Google AdSense may set advertising cookies. See the <a href="/privacy-policy/">Privacy Policy</a>.</p>
     <div class="footer-bottom">
       <span>&copy; ${YEAR} InfoNest. All rights reserved. Hosted at <a href="https://infonest.page" class="footer-bottom-link">infonest.page</a></span>
       <div class="footer-bottom-links">
@@ -197,31 +198,26 @@
     const drawer    = $('#navDrawer');
     if (!hamburger || !drawer) return;
 
+    function setDrawer(open) {
+      drawer.classList.toggle('open', open);
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+      drawer.hidden = !open;
+      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
     hamburger.addEventListener('click', function () {
-      const isOpen = drawer.classList.contains('open');
-      drawer.classList.toggle('open');
-      hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', String(!isOpen));
-      document.body.style.overflow = isOpen ? '' : 'hidden';
+      setDrawer(!drawer.classList.contains('open'));
     });
 
-    // Close on drawer link click
     $$('.nav-drawer-link', drawer).forEach(link => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', () => setDrawer(false));
     });
 
-    // Close on ESC
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && drawer.classList.contains('open')) {
-        drawer.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        setDrawer(false);
         hamburger.focus();
       }
     });
@@ -404,39 +400,6 @@
     });
   }
 
-  function setupCookieBanner() {
-    if (localStorage.getItem('infonest-cookies') === 'ok') return;
-    const bar = document.createElement('div');
-    bar.className = 'cookie-banner';
-    bar.setAttribute('role', 'dialog');
-    bar.setAttribute('aria-label', 'Cookie notice');
-    bar.innerHTML = `<p>We use essential cookies for theme preference. After ads are approved, Google AdSense may set advertising cookies. See our <a href="/privacy-policy/">Privacy Policy</a>.</p><button type="button" class="btn btn-primary btn-sm" id="cookieAccept">OK</button>`;
-    document.body.appendChild(bar);
-    $('#cookieAccept', bar).addEventListener('click', function () {
-      localStorage.setItem('infonest-cookies', 'ok');
-      bar.remove();
-    });
-  }
-
-  function injectFonts() {
-    if (document.getElementById('infonest-fonts')) return;
-    const head = document.head;
-    const pre1 = document.createElement('link');
-    pre1.rel = 'preconnect';
-    pre1.href = 'https://fonts.googleapis.com';
-    const pre2 = document.createElement('link');
-    pre2.rel = 'preconnect';
-    pre2.href = 'https://fonts.gstatic.com';
-    pre2.crossOrigin = 'anonymous';
-    const fonts = document.createElement('link');
-    fonts.id = 'infonest-fonts';
-    fonts.rel = 'stylesheet';
-    fonts.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap';
-    head.appendChild(pre1);
-    head.appendChild(pre2);
-    head.appendChild(fonts);
-  }
-
   /* ── Initialize ── */
   function init() {
     injectShared();
@@ -450,10 +413,7 @@
     setupUniqueImagesAndClickableCards();
     setupSidebarIcons();
     setupContactForm();
-    setupCookieBanner();
   }
-
-  injectFonts();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
