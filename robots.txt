@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /author/alex-morgan/
 
 Sitemap: https://infonest.page/sitemap.xml

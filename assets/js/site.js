@@ -45,6 +45,7 @@
     ).join('');
 
     return `
+<a class="skip-link" href="#main-content">Skip to content</a>
 <nav class="site-nav" aria-label="Main navigation">
   <div class="container nav-inner">
     <a href="/" class="nav-logo" aria-label="InfoNest Home">
@@ -62,6 +63,8 @@
 
     <div class="nav-menu" role="list">
       ${navLinksHTML}
+      <a href="/about/" class="nav-link${isActive('/about/') ? ' active' : ''}">About</a>
+      <a href="/contact/" class="nav-link${isActive('/contact/') ? ' active' : ''}">Contact</a>
     </div>
 
     <div class="nav-actions">
@@ -415,6 +418,25 @@
     });
   }
 
+  function injectFonts() {
+    if (document.getElementById('infonest-fonts')) return;
+    const head = document.head;
+    const pre1 = document.createElement('link');
+    pre1.rel = 'preconnect';
+    pre1.href = 'https://fonts.googleapis.com';
+    const pre2 = document.createElement('link');
+    pre2.rel = 'preconnect';
+    pre2.href = 'https://fonts.gstatic.com';
+    pre2.crossOrigin = 'anonymous';
+    const fonts = document.createElement('link');
+    fonts.id = 'infonest-fonts';
+    fonts.rel = 'stylesheet';
+    fonts.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap';
+    head.appendChild(pre1);
+    head.appendChild(pre2);
+    head.appendChild(fonts);
+  }
+
   /* ── Initialize ── */
   function init() {
     injectShared();
@@ -430,6 +452,8 @@
     setupContactForm();
     setupCookieBanner();
   }
+
+  injectFonts();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);

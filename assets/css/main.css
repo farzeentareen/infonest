@@ -3,8 +3,7 @@
    Version: 1.0.0
    ============================================================ */
 
-/* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Fonts loaded via preconnect + stylesheet in site.js (not @import) */
 
 /* ── Design Tokens ── */
 :root {
@@ -171,6 +170,22 @@ p  { margin-bottom: var(--space-4); }
 .text-muted  { color: var(--text-secondary); }
 .text-accent { color: var(--accent-primary); }
 
+/* ── Skip link ── */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  z-index: 1100;
+  background: var(--color-teal);
+  color: #0D1B2A;
+  padding: 8px 14px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 /* ── Navigation ── */
 .site-nav {
   position: fixed;
@@ -219,7 +234,7 @@ p  { margin-bottom: var(--space-4); }
   flex-wrap: nowrap;
 }
 .nav-link {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--text-on-dark-muted);
   padding: var(--space-2) var(--space-3);
