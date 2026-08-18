@@ -55,8 +55,8 @@
   --shadow-lg:         0 10px 32px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.08);
 
   /* Typography */
-  --font-display:      'Playfair Display', Georgia, serif;
-  --font-body:         'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display:      Georgia, 'Times New Roman', serif;
+  --font-body:         -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   /* Spacing Scale (8pt grid) */
   --space-1:  4px;
@@ -113,7 +113,7 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -999,11 +999,10 @@ p  { margin-bottom: var(--space-4); }
   to   { opacity: 1; }
 }
 
-.animate-fade-up { animation: fadeInUp 0.6s ease both; }
-.animate-fade    { animation: fadeIn  0.6s ease both; }
+.animate-fade-up { animation: none; }
+.animate-fade    { animation: none; }
 
-[data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-[data-animate].in-view { opacity: 1; transform: none; }
+[data-animate] { opacity: 1; transform: none; }
 
 /* ── Category Landing Page ── */
 .category-header {
