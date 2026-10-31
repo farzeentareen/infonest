@@ -1,10 +1,31 @@
 /* ============================================================
-   InfoNest — site.js
+   InfoNest — site.js v2.0
    Shared navigation, footer injection, dark mode, animations
    ============================================================ */
 
 (function () {
   'use strict';
+
+  /* ── Load Google Fonts ── */
+  function loadFonts() {
+    if (document.querySelector('link[data-infonest-fonts]')) return;
+    const preconnect1 = document.createElement('link');
+    preconnect1.rel = 'preconnect';
+    preconnect1.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(preconnect1);
+
+    const preconnect2 = document.createElement('link');
+    preconnect2.rel = 'preconnect';
+    preconnect2.href = 'https://fonts.gstatic.com';
+    preconnect2.setAttribute('crossorigin', '');
+    document.head.appendChild(preconnect2);
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap';
+    link.setAttribute('data-infonest-fonts', '1');
+    document.head.appendChild(link);
+  }
 
   /* ── Helpers ── */
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -273,6 +294,15 @@
     }, { passive: true });
   }
 
+  /* ── Nav scroll class ── */
+  function initNavScroll() {
+    const nav = document.querySelector('.site-nav');
+    if (!nav) return;
+    const toggle = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+    toggle();
+    window.addEventListener('scroll', toggle, { passive: true });
+  }
+
   /* ── Intersection Observer Animations ── */
   function initAnimations() {
     const elements = $$('[data-animate]');
@@ -281,14 +311,20 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
+          // Stagger siblings in the same grid/list
+          const parent = entry.target.parentElement;
+          const siblings = parent ? [...parent.querySelectorAll('[data-animate]')] : [];
+          const index = siblings.indexOf(entry.target);
+          const delay = index >= 0 ? index * 55 : 0;
+          setTimeout(() => {
+            entry.target.classList.add('in-view');
+          }, delay);
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
 
-    elements.forEach((el, i) => {
-      el.style.transitionDelay = (i * 60) + 'ms';
+    elements.forEach(el => {
       observer.observe(el);
     });
   }
@@ -441,12 +477,14 @@
 
   /* ── Initialize ── */
   function init() {
+    loadFonts();
     injectShared();
     initTheme();
     setupThemeToggle();
     setupMobileMenu();
     initScrollTop();
     initReadingProgress();
+    initNavScroll();
     initAnimations();
     setReadingTime();
     setupUniqueImagesAndClickableCards();
