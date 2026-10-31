@@ -451,28 +451,82 @@
     });
   }
 
-  /* ── Tool Filters ── */
+  /* ── Tool Filters & Live Search ── */
   function setupToolFilters() {
     const filterBtns = $$('.tool-filter-btn');
-    const toolCards = $$('.tool-card');
-    if (!filterBtns.length || !toolCards.length) return;
+    const toolCards = $$('.tool-card, .tc-card');
+    const categoryBlocks = $$('.tc-category-block');
+    const searchInput = $('#tc-search-input') || $('.tc-search-input');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', function () {
-        const filterVal = this.getAttribute('data-filter') || 'all';
-        filterBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
+    function applyFilterAndSearch() {
+      const activeBtn = $('.tool-filter-btn.active');
+      const filterVal = activeBtn ? (activeBtn.getAttribute('data-filter') || 'all') : 'all';
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
 
+      // If category blocks exist (e.g. on directory page)
+      if (categoryBlocks.length) {
+        categoryBlocks.forEach(block => {
+          const blockCat = block.getAttribute('data-category');
+          const cardsInBlock = $$('.tc-card', block);
+          let visibleInBlock = 0;
+
+          cardsInBlock.forEach(card => {
+            const cardCat = card.getAttribute('data-tool-category') || blockCat;
+            const title = (card.querySelector('.tc-card-title, .tool-card-title') || {}).textContent || '';
+            const desc = (card.querySelector('.tc-card-desc, .tool-card-desc') || {}).textContent || '';
+            const matchesCat = (filterVal === 'all' || cardCat === filterVal);
+            const matchesSearch = !query || title.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
+
+            if (matchesCat && matchesSearch) {
+              card.style.display = 'flex';
+              visibleInBlock++;
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Show or hide the whole category section
+          if (visibleInBlock > 0) {
+            block.style.display = '';
+          } else {
+            block.style.display = 'none';
+          }
+        });
+      } else if (toolCards.length) {
+        // Flat grid (e.g. homepage)
         toolCards.forEach(card => {
           const cardCat = card.getAttribute('data-tool-category');
-          if (filterVal === 'all' || cardCat === filterVal) {
+          const title = (card.querySelector('.tc-card-title, .tool-card-title') || {}).textContent || '';
+          const desc = (card.querySelector('.tc-card-desc, .tool-card-desc') || {}).textContent || '';
+          const matchesCat = (filterVal === 'all' || cardCat === filterVal);
+          const matchesSearch = !query || title.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
+
+          if (matchesCat && matchesSearch) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
           }
         });
+      }
+    }
+
+    if (filterBtns.length) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+          applyFilterAndSearch();
+        });
       });
-    });
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilterAndSearch);
+    }
   }
 
   /* ── Initialize ── */

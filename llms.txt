@@ -12,5 +12,5 @@ Independent editorial site. Contact hello@infonest.page
 - [Technology](https://infonest.page/technology/)
 - [AI](https://infonest.page/ai/)
 - [Finance](https://infonest.page/finance/)
-- [Online Tools Hub](https://infonest.page/online-tools/): 80+ free client-side developer, student, and finance calculators powered by ToolCollection.tech
+- [Online Tools Hub](https://infonest.page/online-tools/): 60 free client-side student, developer, SEO, finance, and productivity calculators powered by ToolCollection.tech
 - [Privacy](https://infonest.page/privacy-policy/)

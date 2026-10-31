@@ -187,85 +187,101 @@
         </p>
       </div>
 
-      <!-- Filter Tabs -->
+      <!-- Filter Tabs matching exact categories -->
       <div class="tool-filter-nav" role="tablist" aria-label="Filter tools by category">
         <button class="tool-filter-btn active" data-filter="all" role="tab" aria-selected="true">All Tools</button>
+        <button class="tool-filter-btn" data-filter="student" role="tab" aria-selected="false">Student</button>
         <button class="tool-filter-btn" data-filter="developer" role="tab" aria-selected="false">Developer</button>
-        <button class="tool-filter-btn" data-filter="finance" role="tab" aria-selected="false">Finance &amp; Wealth</button>
-        <button class="tool-filter-btn" data-filter="student" role="tab" aria-selected="false">Student &amp; GPA</button>
-        <button class="tool-filter-btn" data-filter="utility" role="tab" aria-selected="false">Productivity</button>
-        <button class="tool-filter-btn" data-filter="health" role="tab" aria-selected="false">Health &amp; Wellness</button>
+        <button class="tool-filter-btn" data-filter="seo" role="tab" aria-selected="false">Web &amp; SEO</button>
+        <button class="tool-filter-btn" data-filter="finance" role="tab" aria-selected="false">Finance</button>
+        <button class="tool-filter-btn" data-filter="image" role="tab" aria-selected="false">Image</button>
+        <button class="tool-filter-btn" data-filter="utility" role="tab" aria-selected="false">Security &amp; Utility</button>
+        <button class="tool-filter-btn" data-filter="text" role="tab" aria-selected="false">Text</button>
       </div>
 
       <!-- Tools Grid -->
       <div class="tool-grid" data-animate>
 
-        <!-- Tool 1: JSON Formatter -->
-        <a href="https://toolcollection.tech/tools/developer/json-formatter" target="_blank" rel="noopener" class="tool-card" data-tool-category="developer" title="Format and validate JSON online for free">
+        <!-- Tool 1: GPA Calculator -->
+        <a href="https://toolcollection.tech/tools/student/gpa-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="student" title="Calculate college or high school GPA">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
             </div>
+            <span class="tool-category-badge">Student</span>
+          </div>
+          <h3 class="tool-card-title">GPA Calculator</h3>
+          <p class="tool-card-desc">Calculate your college or high school Grade Point Average with standard 4.0 scale and weighted credit hours.</p>
+          <div class="tool-card-footer">
+            <span class="tool-feature-tag">Standard 4.0</span>
+            <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Tool 2: JSON Formatter -->
+        <a href="https://toolcollection.tech/tools/developer/json-formatter" target="_blank" rel="noopener" class="tool-card" data-tool-category="developer" title="Format, validate, beautify JSON">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrap" aria-hidden="true" style="font-family:monospace;font-weight:700;font-size:1.15rem;">{ }</div>
             <span class="tool-category-badge">Developer</span>
           </div>
-          <h3 class="tool-card-title">JSON Formatter &amp; Validator</h3>
-          <p class="tool-card-desc">Format, parse, and beautify raw JSON data with instant syntax highlighting, error detection, and indentation control.</p>
+          <h3 class="tool-card-title">JSON Formatter</h3>
+          <p class="tool-card-desc">Format, validate, beautify, and inspect JSON code online with collapsible syntax trees and indent options.</p>
           <div class="tool-card-footer">
             <span class="tool-feature-tag">100% Client-Side</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
-        <!-- Tool 2: GPA & CGPA Calculator -->
-        <a href="https://toolcollection.tech/tools/student/gpa-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="student" title="Calculate semester GPA and cumulative CGPA">
+        <!-- Tool 3: Loan Calculator -->
+        <a href="https://toolcollection.tech/tools/finance/loan-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="finance" title="Free online loan calculator">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            </div>
-            <span class="tool-category-badge">Academic</span>
-          </div>
-          <h3 class="tool-card-title">Online GPA &amp; CGPA Calculator</h3>
-          <p class="tool-card-desc">Calculate semester GPA and cumulative CGPA with customizable credit hours and 4.0, 5.0, or percentage grading scales.</p>
-          <div class="tool-card-footer">
-            <span class="tool-feature-tag">Weighted Scales</span>
-            <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </div>
-        </a>
-
-        <!-- Tool 3: Loan & EMI Calculator -->
-        <a href="https://toolcollection.tech/tools/finance/loan-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="finance" title="Free online loan EMI and amortization schedule calculator">
-          <div class="tool-card-header">
-            <div class="tool-icon-wrap" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8"/><line x1="10" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="14" y2="8"/><line x1="18" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="6" y1="10" x2="6" y2="21"/><line x1="10" y1="10" x2="10" y2="21"/><line x1="14" y1="10" x2="14" y2="21"/><line x1="18" y1="10" x2="18" y2="21"/></svg>
             </div>
             <span class="tool-category-badge">Finance</span>
           </div>
-          <h3 class="tool-card-title">Loan &amp; EMI Calculator</h3>
-          <p class="tool-card-desc">Determine exact monthly payments, total interest costs, and full annual loan amortization schedules for home, personal, or car financing.</p>
+          <h3 class="tool-card-title">Loan Calculator</h3>
+          <p class="tool-card-desc">Calculate monthly payments, total interest, and annual amortization tables for home, auto, or personal loans.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">Full Amortization</span>
+            <span class="tool-feature-tag">Amortization</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
         <!-- Tool 4: Compound Interest Calculator -->
-        <a href="https://toolcollection.tech/tools/finance/compound-interest-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="finance" title="Compound interest investment growth simulator">
+        <a href="https://toolcollection.tech/tools/finance/compound-interest-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="finance" title="Compound interest investment simulator">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
             </div>
-            <span class="tool-category-badge">Wealth</span>
+            <span class="tool-category-badge">Finance</span>
           </div>
           <h3 class="tool-card-title">Compound Interest Calculator</h3>
-          <p class="tool-card-desc">Forecast the future value of your savings and investments with monthly compounding, regular deposits, and annual returns.</p>
+          <p class="tool-card-desc">Calculate compound interest growth with monthly additions, compounding frequency, and annual returns.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">Interactive Growth</span>
+            <span class="tool-feature-tag">Growth Simulation</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
-        <!-- Tool 5: QR Code Generator -->
-        <a href="https://toolcollection.tech/tools/utility/qr-code-generator" target="_blank" rel="noopener" class="tool-card" data-tool-category="utility" title="Create free QR codes for URLs, WiFi, and text">
+        <!-- Tool 5: Password Generator -->
+        <a href="https://toolcollection.tech/tools/utility/password-generator" target="_blank" rel="noopener" class="tool-card" data-tool-category="utility" title="Generate strong secure passwords">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <span class="tool-category-badge">Security</span>
+          </div>
+          <h3 class="tool-card-title">Password Generator</h3>
+          <p class="tool-card-desc">Generate strong, random, and secure passwords with customizable length, symbols, and zero logs.</p>
+          <div class="tool-card-footer">
+            <span class="tool-feature-tag">Zero-Log Security</span>
+            <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Tool 6: QR Code Generator -->
+        <a href="https://toolcollection.tech/tools/utility/qr-code-generator" target="_blank" rel="noopener" class="tool-card" data-tool-category="utility" title="Generate custom QR codes">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
@@ -273,89 +289,105 @@
             <span class="tool-category-badge">Utility</span>
           </div>
           <h3 class="tool-card-title">QR Code Generator</h3>
-          <p class="tool-card-desc">Generate sharp, customizable QR codes in seconds for web links, Wi-Fi networks, SMS, or vCards with SVG &amp; PNG download options.</p>
+          <p class="tool-card-desc">Generate custom QR codes for URLs, text, email, phone, and Wi-Fi networks with instant vector export.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">Instant Export</span>
+            <span class="tool-feature-tag">Vector Export</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
-        <!-- Tool 6: Strong Password Generator -->
-        <a href="https://toolcollection.tech/tools/developer/password-generator" target="_blank" rel="noopener" class="tool-card" data-tool-category="developer" title="Secure cryptographic password generator">
+        <!-- Tool 7: Meta Tag Generator -->
+        <a href="https://toolcollection.tech/tools/seo/meta-tag-generator" target="_blank" rel="noopener" class="tool-card" data-tool-category="seo" title="Generate HTML meta tags">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
-            <span class="tool-category-badge">Security</span>
+            <span class="tool-category-badge">Web &amp; SEO</span>
           </div>
-          <h3 class="tool-card-title">Strong Password Generator</h3>
-          <p class="tool-card-desc">Generate uncrackable, cryptographically randomized passwords with entropy scoring, symbol toggles, and zero server logging.</p>
+          <h3 class="tool-card-title">Meta Tag Generator</h3>
+          <p class="tool-card-desc">Generate optimized HTML meta tags, Open Graph data, and search engine title tags with live preview.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">Zero-Log Security</span>
+            <span class="tool-feature-tag">SEO &amp; Social</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
-        <!-- Tool 7: Base64 Encoder / Decoder -->
-        <a href="https://toolcollection.tech/tools/developer/base64-encoder-decoder" target="_blank" rel="noopener" class="tool-card" data-tool-category="developer" title="Base64 encoder and decoder tool">
+        <!-- Tool 8: Image Compressor -->
+        <a href="https://toolcollection.tech/tools/image/image-compressor" target="_blank" rel="noopener" class="tool-card" data-tool-category="image" title="Compress JPG, PNG, and WebP">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             </div>
-            <span class="tool-category-badge">Developer</span>
+            <span class="tool-category-badge">Image</span>
           </div>
-          <h3 class="tool-card-title">Base64 Encoder &amp; Decoder</h3>
-          <p class="tool-card-desc">Safely convert text, UTF-8 snippets, and binary code to and from Base64 representation directly in your browser.</p>
+          <h3 class="tool-card-title">Image Compressor</h3>
+          <p class="tool-card-desc">Compress JPG, PNG, and WebP images online in your browser without losing quality or resolution.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">UTF-8 Compliant</span>
+            <span class="tool-feature-tag">Zero Upload</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
-        <!-- Tool 8: Grade & Percentage Calculator -->
-        <a href="https://toolcollection.tech/tools/student/grade-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="student" title="Final exam and course grade calculator">
+        <!-- Tool 9: Word Counter -->
+        <a href="https://toolcollection.tech/tools/text/word-counter" target="_blank" rel="noopener" class="tool-card" data-tool-category="text" title="Count words and characters">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
-            <span class="tool-category-badge">Academic</span>
+            <span class="tool-category-badge">Text</span>
           </div>
-          <h3 class="tool-card-title">Grade &amp; Target Score Calculator</h3>
-          <p class="tool-card-desc">Calculate what score you need on your upcoming final exam to maintain your desired course letter grade or GPA.</p>
+          <h3 class="tool-card-title">Word Counter</h3>
+          <p class="tool-card-desc">Count words, characters, sentences, paragraphs, and estimate reading and speaking times instantly.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">Target Exam Math</span>
+            <span class="tool-feature-tag">Real-Time Stats</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
-        <!-- Tool 9: Universal Unit Converter -->
-        <a href="https://toolcollection.tech/tools/utility/unit-converter" target="_blank" rel="noopener" class="tool-card" data-tool-category="utility" title="Online unit converter for length, mass, and temperature">
+        <!-- Tool 10: Regex Tester -->
+        <a href="https://toolcollection.tech/tools/developer/regex-tester" target="_blank" rel="noopener" class="tool-card" data-tool-category="developer" title="Test and debug regular expressions">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
             </div>
-            <span class="tool-category-badge">Utility</span>
+            <span class="tool-category-badge">Developer</span>
           </div>
-          <h3 class="tool-card-title">Universal Unit Converter</h3>
-          <p class="tool-card-desc">Convert between metric, imperial, and digital units including length, temperature, speed, storage bytes, and weight.</p>
+          <h3 class="tool-card-title">Regex Tester</h3>
+          <p class="tool-card-desc">Test, debug, and validate regular expressions online with live pattern matching, flags, and match groups.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">Metric &amp; Imperial</span>
+            <span class="tool-feature-tag">Live Testing</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
 
-        <!-- Tool 10: BMI & Calorie Calculator -->
-        <a href="https://toolcollection.tech/tools/health/bmi-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="health" title="Free BMI and daily maintenance calorie calculator">
+        <!-- Tool 11: Percentage Calculator -->
+        <a href="https://toolcollection.tech/tools/student/percentage-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="student" title="Calculate percentages and exam marks">
           <div class="tool-card-header">
             <div class="tool-icon-wrap" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
             </div>
-            <span class="tool-category-badge">Health</span>
+            <span class="tool-category-badge">Student</span>
           </div>
-          <h3 class="tool-card-title">BMI &amp; Calorie Calculator</h3>
-          <p class="tool-card-desc">Accurately calculate your Body Mass Index (BMI), Basal Metabolic Rate (BMR), and daily calorie burn for your fitness journey.</p>
+          <h3 class="tool-card-title">Percentage Calculator</h3>
+          <p class="tool-card-desc">Calculate percentages, exam marks percentage, discounts, percentage change, and proportions.</p>
           <div class="tool-card-footer">
-            <span class="tool-feature-tag">Health Metrics</span>
+            <span class="tool-feature-tag">Exam &amp; Mark Math</span>
+            <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+          </div>
+        </a>
+
+        <!-- Tool 12: BMI Calculator -->
+        <a href="https://toolcollection.tech/tools/student/bmi-calculator" target="_blank" rel="noopener" class="tool-card" data-tool-category="student" title="Calculate Body Mass Index">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <span class="tool-category-badge">Student</span>
+          </div>
+          <h3 class="tool-card-title">BMI Calculator (Body Mass Index)</h3>
+          <p class="tool-card-desc">Calculate Body Mass Index (BMI) using Metric (cm/kg) or Imperial (ft/lbs) standards with healthy weight ranges.</p>
+          <div class="tool-card-footer">
+            <span class="tool-feature-tag">WHO Standards</span>
             <span class="tool-card-link-text">Launch Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
         </a>
@@ -365,12 +397,17 @@
       <!-- Banner CTA -->
       <div class="tool-hub-banner">
         <div class="tool-hub-banner-content">
-          <h3>Explore Over 80+ Free Utilities on ToolCollection</h3>
-          <p>From CSS generators and regex testers to mortgage amortization tables and academic GPA trackers — all tools run entirely in your web browser with zero ads, tracking, or paywalls.</p>
+          <h3>Explore All 60 Free Online Tools on ToolCollection</h3>
+          <p>From student GPA calculators and crontab generators to SEO sitemaps and image converters — all 60 tools execute locally in your web browser with zero tracking, logs, or paywalls.</p>
         </div>
-        <a href="https://toolcollection.tech" target="_blank" rel="noopener" class="btn btn-primary" style="white-space:nowrap; padding: 14px 28px; font-weight:700;">
-          Browse All 80+ Tools &rarr;
-        </a>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+          <a href="/online-tools/" class="btn btn-secondary" style="white-space:nowrap; padding: 14px 24px; font-weight:700;">
+            View All 60 Tools &rarr;
+          </a>
+          <a href="https://toolcollection.tech" target="_blank" rel="noopener" class="btn btn-primary" style="white-space:nowrap; padding: 14px 28px; font-weight:700;">
+            Visit ToolCollection.tech &rarr;
+          </a>
+        </div>
       </div>
 
     </div>

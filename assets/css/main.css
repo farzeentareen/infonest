@@ -1927,3 +1927,239 @@ tr:hover td { background: var(--bg-surface-2); }
   color: #FFFFFF;
   letter-spacing: 0.05em;
 }
+
+/* ============================================================
+   ToolCollection.tech Showcase & Categories UI
+   ============================================================ */
+.tc-category-block {
+  margin-bottom: var(--space-10);
+}
+
+.tc-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+.tc-cat-title-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tc-cat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: var(--color-teal);
+}
+
+.tc-cat-title {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.tc-cat-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--text-secondary);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+[data-theme="dark"] .tc-cat-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.tc-view-all {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #818cf8;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.tc-view-all:hover {
+  color: #a5b4fc;
+  transform: translateX(3px);
+}
+[data-theme="light"] .tc-view-all {
+  color: #4f46e5;
+}
+[data-theme="light"] .tc-view-all:hover {
+  color: #3730a3;
+}
+
+/* 4-column tool grid exactly matching screenshot */
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 1200px) {
+  .tc-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .tc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .tc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tool card matching toolcollection.tech screenshot */
+.tc-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #111a2e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="light"] .tc-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.tc-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+[data-theme="light"] .tc-card:hover {
+  border-color: var(--color-teal);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+}
+
+.tc-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #818cf8;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: transform var(--transition-spring), color var(--transition-fast);
+}
+[data-theme="light"] .tc-card-icon {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #4f46e5;
+}
+
+.tc-card:hover .tc-card-icon {
+  transform: scale(1.06);
+  color: #38bdf8;
+}
+
+.tc-card-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tc-card-title {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--transition-fast);
+}
+[data-theme="light"] .tc-card-title {
+  color: #0f172a;
+}
+.tc-card:hover .tc-card-title {
+  color: #38bdf8;
+}
+[data-theme="light"] .tc-card:hover .tc-card-title {
+  color: var(--color-teal-dark);
+}
+
+.tc-card-desc {
+  font-size: 0.79rem;
+  color: #8a99ad;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+[data-theme="light"] .tc-card-desc {
+  color: #64748b;
+}
+
+/* Tool search bar */
+.tc-search-wrap {
+  max-width: 560px;
+  margin: 0 auto var(--space-6);
+  position: relative;
+}
+.tc-search-input {
+  width: 100%;
+  padding: 12px 18px 12px 44px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+.tc-search-input:focus {
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15);
+}
+.tc-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+

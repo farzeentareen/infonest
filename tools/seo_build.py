@@ -275,7 +275,7 @@ def tools_ld() -> dict:
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Featured Free Online Tools & Web Calculators",
-        "description": "Curated collection of instant client-side tools and calculators powered by ToolCollection.tech",
+        "description": "Curated collection of 60 instant client-side tools and calculators powered by ToolCollection.tech",
         "url": f"{HOST}/#tools",
         "itemListElement": [
             {
@@ -283,9 +283,9 @@ def tools_ld() -> dict:
                 "position": 1,
                 "item": {
                     "@type": "WebApplication",
-                    "name": "JSON Formatter & Validator",
-                    "url": "https://toolcollection.tech/tools/developer/json-formatter",
-                    "applicationCategory": "DeveloperApplication",
+                    "name": "GPA Calculator",
+                    "url": "https://toolcollection.tech/tools/student/gpa-calculator",
+                    "applicationCategory": "EducationalApplication",
                     "operatingSystem": "All",
                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
                 },
@@ -295,9 +295,9 @@ def tools_ld() -> dict:
                 "position": 2,
                 "item": {
                     "@type": "WebApplication",
-                    "name": "Online GPA & CGPA Calculator",
-                    "url": "https://toolcollection.tech/tools/student/gpa-calculator",
-                    "applicationCategory": "EducationalApplication",
+                    "name": "JSON Formatter",
+                    "url": "https://toolcollection.tech/tools/developer/json-formatter",
+                    "applicationCategory": "DeveloperApplication",
                     "operatingSystem": "All",
                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
                 },
@@ -307,7 +307,7 @@ def tools_ld() -> dict:
                 "position": 3,
                 "item": {
                     "@type": "WebApplication",
-                    "name": "Loan & EMI Calculator",
+                    "name": "Loan Calculator",
                     "url": "https://toolcollection.tech/tools/finance/loan-calculator",
                     "applicationCategory": "FinanceApplication",
                     "operatingSystem": "All",
@@ -331,7 +331,7 @@ def tools_ld() -> dict:
                 "position": 5,
                 "item": {
                     "@type": "WebApplication",
-                    "name": "High-Resolution QR Code Generator",
+                    "name": "QR Code Generator",
                     "url": "https://toolcollection.tech/tools/utility/qr-code-generator",
                     "applicationCategory": "UtilitiesApplication",
                     "operatingSystem": "All",
