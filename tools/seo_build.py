@@ -91,6 +91,7 @@ def collect_urls():
     # core
     for p in [
         "index.html",
+        "online-tools/index.html",
         "about/index.html",
         "contact/index.html",
         "privacy-policy/index.html",
@@ -269,6 +270,78 @@ def category_ld(html: str, cat: str) -> dict:
     }
 
 
+def tools_ld() -> dict:
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Featured Free Online Tools & Web Calculators",
+        "description": "Curated collection of instant client-side tools and calculators powered by ToolCollection.tech",
+        "url": f"{HOST}/#tools",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "WebApplication",
+                    "name": "JSON Formatter & Validator",
+                    "url": "https://toolcollection.tech/tools/developer/json-formatter",
+                    "applicationCategory": "DeveloperApplication",
+                    "operatingSystem": "All",
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                },
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "WebApplication",
+                    "name": "Online GPA & CGPA Calculator",
+                    "url": "https://toolcollection.tech/tools/student/gpa-calculator",
+                    "applicationCategory": "EducationalApplication",
+                    "operatingSystem": "All",
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                },
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "WebApplication",
+                    "name": "Loan & EMI Calculator",
+                    "url": "https://toolcollection.tech/tools/finance/loan-calculator",
+                    "applicationCategory": "FinanceApplication",
+                    "operatingSystem": "All",
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                },
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "WebApplication",
+                    "name": "Compound Interest Calculator",
+                    "url": "https://toolcollection.tech/tools/finance/compound-interest-calculator",
+                    "applicationCategory": "FinanceApplication",
+                    "operatingSystem": "All",
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                },
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                    "@type": "WebApplication",
+                    "name": "High-Resolution QR Code Generator",
+                    "url": "https://toolcollection.tech/tools/utility/qr-code-generator",
+                    "applicationCategory": "UtilitiesApplication",
+                    "operatingSystem": "All",
+                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                },
+            },
+        ],
+    }
+
+
 def ld_html(objs) -> str:
     if not isinstance(objs, list):
         objs = [objs]
@@ -311,6 +384,27 @@ def process_file(path: Path):
                 "publisher": org_publisher(),
             },
             dict({"@context": "https://schema.org"}, **org_publisher()),
+            tools_ld(),
+        ]))
+    elif rel.as_posix() == "online-tools/index.html":
+        html = inject_after_title(html, ld_html([
+            {
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "name": "Free Online Tools & Web Calculators Directory — InfoNest",
+                "description": "Comprehensive directory of free client-side tools and calculators powered by ToolCollection.tech",
+                "url": f"{HOST}/online-tools/",
+                "isPartOf": {"@type": "WebSite", "name": "InfoNest", "url": HOST},
+                "mainEntity": tools_ld(),
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": HOST + "/"},
+                    {"@type": "ListItem", "position": 2, "name": "Online Tools", "item": f"{HOST}/online-tools/"},
+                ],
+            },
         ]))
     elif rel.as_posix() == "about/index.html":
         html = inject_after_title(html, ld_html(dict({"@context": "https://schema.org"}, **org_publisher())))

@@ -63,6 +63,7 @@
 
     <div class="nav-menu">
       ${navLinksHTML}
+      <a href="/online-tools/" class="nav-link nav-tool-highlight${isActive('/online-tools/') ? ' active' : ''}" title="Explore 80+ Free Online Tools & Calculators">Tools <span class="nav-badge-pill">Free</span></a>
       <a href="/about/" class="nav-link${isActive('/about/') ? ' active' : ''}">About</a>
       <a href="/contact/" class="nav-link${isActive('/contact/') ? ' active' : ''}">Contact</a>
     </div>
@@ -80,6 +81,8 @@
 
 <div class="nav-drawer" id="navDrawer" hidden role="dialog" aria-label="Mobile navigation" aria-hidden="true">
   ${drawerLinksHTML}
+  <a href="/online-tools/"     class="nav-drawer-link" style="color:var(--color-teal);font-weight:600;">Free Online Tools Hub &rarr;</a>
+  <a href="https://toolcollection.tech" target="_blank" rel="noopener" class="nav-drawer-link">ToolCollection.tech &nearr;</a>
   <a href="/about/"            class="nav-drawer-link">About Us</a>
   <a href="/contact/"          class="nav-drawer-link">Contact</a>
   <a href="/editorial-policy/" class="nav-drawer-link">Editorial Policy</a>
@@ -120,6 +123,18 @@
           <a href="/productivity/"  class="footer-link">Productivity</a>
           <a href="/travel/"        class="footer-link">Travel</a>
           <a href="/lifestyle/"     class="footer-link">Lifestyle</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="footer-col-title">Free Tools</h3>
+        <nav class="footer-links" aria-label="Tool links">
+          <a href="https://toolcollection.tech" class="footer-link" target="_blank" rel="noopener" title="80+ Free Online Tools & Calculators">ToolCollection.tech</a>
+          <a href="https://toolcollection.tech/tools/developer/json-formatter" class="footer-link" target="_blank" rel="noopener">JSON Formatter</a>
+          <a href="https://toolcollection.tech/tools/student/gpa-calculator" class="footer-link" target="_blank" rel="noopener">GPA Calculator</a>
+          <a href="https://toolcollection.tech/tools/finance/loan-calculator" class="footer-link" target="_blank" rel="noopener">Loan &amp; EMI Calculator</a>
+          <a href="https://toolcollection.tech/tools/utility/qr-code-generator" class="footer-link" target="_blank" rel="noopener">QR Code Generator</a>
+          <a href="/online-tools/" class="footer-link">Tools Directory &rarr;</a>
         </nav>
       </div>
 
@@ -400,6 +415,30 @@
     });
   }
 
+  /* ── Tool Filters ── */
+  function setupToolFilters() {
+    const filterBtns = $$('.tool-filter-btn');
+    const toolCards = $$('.tool-card');
+    if (!filterBtns.length || !toolCards.length) return;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const filterVal = this.getAttribute('data-filter') || 'all';
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        toolCards.forEach(card => {
+          const cardCat = card.getAttribute('data-tool-category');
+          if (filterVal === 'all' || cardCat === filterVal) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   /* ── Initialize ── */
   function init() {
     injectShared();
@@ -413,6 +452,7 @@
     setupUniqueImagesAndClickableCards();
     setupSidebarIcons();
     setupContactForm();
+    setupToolFilters();
   }
 
   window.addEventListener('load', function () {
